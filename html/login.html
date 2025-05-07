@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/images/favicon-enhanced.png" />
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <style>
+    .alert {
+      display: none;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #4caf50;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      box-shadow: 0px 0px 10px 0px #262626;
+      opacity: 0.8;
+      transition: all 0.3s ease-in-out;
+      z-index: 1;
+    }
+    #emptyFieldsAlert {
+      background-color: red;
+    }
+    input[type="password"]::-webkit-credentials-auto-fill-button,
+    input[type="password"]::-webkit-contacts-auto-fill-button,
+    input[type="password"]::-ms-reveal {
+      display: none;
+    }
+  </style>
+  <title>Sukoon - Login</title>
+</head>
+<body onload="myfunction()">
+
+  <div id="load">
+    <div style="background-color: white; height: 25vh; width: 100%; position: relative; top: -70px;"></div>
+  </div>
+
+  <div class="alert" id="emptyFieldsAlert">Please fill in all fields!</div>
+  <div class="alert" id="loginAlert">Sign in successful!</div>
+  <div class="alert" id="signupAlert">Sign up successful!</div>
+
+  <img src="../images/signupill.png" alt="" />
+  <div class="login">
+    <div class="welcome">
+      <h1 class="titletext">Welcome Back &#x1F917</h1>
+      <span>Please enter your details.</span>
+    </div>
+    <div class="inputs">
+      <span>Email<br /></span>
+      <input class="inputbox" placeholder="Enter your email" id="loginEmail" /><br />
+      <span>Password<br /></span>
+      <input type="password" class="inputbox" placeholder="••••••••" id="loginPassword" />
+      <i class="fas fa-eye-slash" id="toggleLoginPassword" style="margin-left: -30px; cursor: pointer;"></i>
+    </div>
+    <div class="forgotpass"><span>Forgot Password</span></div>
+    <p class="back"><a class="tag" href="../index.html">&#8592; Back</a></p>
+    <div class="button">
+      <input type="button" class="signin" value="Sign in" id="loginButton" />
+    </div>
+    <div class="signupline">
+      <span>Don't have an account?</span>
+      <span class="signupbutton"> Sign up</span>
+    </div>
+  </div>
+
+  <div class="register" style="display: none;">
+    <div class="welcome">
+      <h1 class="titletext">Create an account</h1>
+      <span>Let's get started.</span>
+    </div>
+    <div class="inputs">
+      <span>Username<br /></span>
+      <input class="inputbox" placeholder="Enter your username" id="signupUsername" /><br />
+      <span>Email<br /></span>
+      <input class="inputbox" placeholder="Enter your email" id="signupEmail" /><br />
+      <span>Password<br /></span>
+      <input type="password" class="inputbox" placeholder="••••••••" id="signupPassword" />
+      <i class="fas fa-eye-slash" id="toggleSignupPassword" style="margin-left: -30px; cursor: pointer;"></i>
+    </div>
+    <p class="back-1"><a class="tag1" href="../index.html">&#8592; Back</a></p>
+    <div class="button">
+      <input type="button" class="signin" value="Sign up" id="signupButton" />
+    </div>
+    <div class="signupline">
+      <span>Already have an account?</span>
+      <span class="signinbutton"> Sign in</span>
+    </div>
+  </div>
+
+  <script>
+    // Supabase setup
+    const SUPABASE_URL = 'https://supabase.com/dashboard/project/icotkhyhsxohszjjissf';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imljb3RraHloc3hvaHN6amppc3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYzNzc0MTksImV4cCI6MjA2MTk1MzQxOX0.M-ovrJU8SZQucMI3S4qCzBZO6RgQyTAnQgClRjYIQus';
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // View toggling
+    const signin_btn = document.querySelector(".signinbutton");
+    const signup_btn = document.querySelector(".signupbutton");
+    const register = document.querySelector(".register");
+    const login = document.querySelector(".login");
+
+    signup_btn.addEventListener("click", () => {
+      register.style.display = "block";
+      login.style.display = "none";
+    });
+
+    signin_btn.addEventListener("click", () => {
+      register.style.display = "none";
+      login.style.display = "block";
+    });
+
+    const loginButton = document.getElementById("loginButton");
+    const signupButton = document.getElementById("signupButton");
+
+    loginButton.addEventListener("click", async () => {
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+
+      if (!email || !password) {
+        showAlert("emptyFieldsAlert");
+        return;
+      }
+
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) {
+        alert("Login failed: " + error.message);
+      } else {
+        showAlert("loginAlert");
+        // Optionally redirect:
+        // window.location.href = "/dashboard.html";
+      }
+    });
+
+    signupButton.addEventListener("click", async () => {
+      const username = document.getElementById("signupUsername").value.trim();
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value.trim();
+
+      if (!username || !email || !password) {
+        showAlert("emptyFieldsAlert");
+        return;
+      }
+
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: { username }
+        }
+      });
+
+      if (error) {
+        alert("Sign up failed: " + error.message);
+      } else {
+        showAlert("signupAlert");
+        document.getElementById("signupUsername").value = "";
+        document.getElementById("signupEmail").value = "";
+        document.getElementById("signupPassword").value = "";
+      }
+    });
+
+    function showAlert(id) {
+      const alertBox = document.getElementById(id);
+      alertBox.style.display = "block";
+      setTimeout(() => {
+        alertBox.style.display = "none";
+      }, 3000);
+    }
+
+    // Preloader
+    function myfunction() {
+      document.getElementById("load").style.display = "none";
+    }
+
+    // Toggle password visibility
+    document.getElementById("toggleLoginPassword").addEventListener("click", () => {
+      togglePassword("loginPassword", "toggleLoginPassword");
+    });
+
+    document.getElementById("toggleSignupPassword").addEventListener("click", () => {
+      togglePassword("signupPassword", "toggleSignupPassword");
+    });
+
+    function togglePassword(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (input.type === "password") {
+        input.type = "text";
+        icon.className = "fas fa-eye";
+      } else {
+        input.type = "password";
+        icon.className = "fas fa-eye-slash";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hridaya</title>
+<link href="/images/favicon-enhanced.png" rel="icon"/>
+<link href="css/style.css" rel="stylesheet">
+<link href="manifest.json" rel="manifest"/>
+<link href="/images/favicon-enhanced.png" rel="apple-touch-icon">
+<meta content="#000000" name="theme-color"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" text="text/CSS"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" text="text/CSS"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+</link></link></head>
+<style>
+  html {
+    scroll-behavior: smooth;
+
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .back-top-wrap {
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    background-color: #80F7D1;
+    padding: 1rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    z-index: 100;
+  }
+
+  .back-top-wrap:hover {
+    background-color: #00a2ff;
+    color: #80F7D1;
+  }
+
+  .back-top-wrap:hover .fas.fa-arrow-up {
+    color: white;
+  }
+
+  .fas.fa-arrow-up {
+    color: #00488F;
+    transition: 0.3s ease-in-out;
+  }
+</style>
+<body onload="myFunction()">
+<div class="loading-wrapper">
+<img id="loading" src="./logo.png"/>
+<p>Hridaya</p>
+</div>
+<!-- Back to top button -->
+<div class="back-top-wrap" id="back-top-div">
+<i class="fas fa-arrow-up"></i>
+</div>
+<header>
+<nav class="nav" id="nav">
+<div>
+<a class="navbar-brand" href="#!"> <img alt="Logo" class="logo" src="logo.png"/></a>
+</div>
+<div class="nav-links" id="navLinks">
+<ul class="links" id="navmenu">
+<li><a href="#">HOME</a></li>
+<li><a href="#about">ABOUT</a></li>
+<li><a href="#services">SERVICES </a></li>
+<li><a href="html/contact.html">CONTACT US </a></li>
+</ul>
+</div>
+<div class="hamburger" id="ham">
+<i class="cancel fa-solid fa-xmark"></i>
+<svg class="burger" fill="currentColor" height="1em" stroke="currentColor" stroke-width="0" viewbox="0 0 1024 1024" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z">
+</path>
+</svg>
+</div>
+</nav>
+<div class="menu" id="menu">
+<ul class="menu-link">
+<li><a href="#">HOME</a></li>
+<li><a href="#about">ABOUT</a></li>
+<li><a href="#services">SERVICES </a></li>
+<li><a href="html/contact.html">CONTACT US </a></li>
+</ul>
+</div>
+<div class="content">
+<h1>Welcome to Hridaya</h1>
+<div class="container">
+<h3><span class="auto-type" style="font-size: 35px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"></span></h3>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+        var typed = new Typed(".auto-type", {
+          strings: ["The one-step solution to get relief from your stress. Live a stress-free life!"],
+          typeSpeed: 50,
+          backspeed: 50,
+          loop: true
+        })
+      </script>
+<a alt="Explore" class="rainbow-button" href="#services"></a>
+</div>
+</header>
+<!-- About Section -->
+<section class="about" id="about">
+<h1 data-aos="flip-right">About Us</h1>
+<div class="max-width">
+<div class="photo" data-aos="zoom-in"><img alt="" height="300px" src="./images/about.jpg" width="330px"/></div>
+<div class="about-content">
+<p class="text-1" data-aos="fade-left"> We are a team of open source contributors who have created this website
+          Hridaya with the aim to provide a <span>one step solution</span> to get relief from stress. </p>
+<p class="text-3" data-aos="fade-left">We hope that everyone can live a <span>stress free life </span>with the
+          help of<span> Hridaya.</span></p>
+</div>
+</div>
+<h3><span style="color: rgb(91, 134, 150);">MEET OUR MEMBERS</span></h3>
+<div class="box">
+<!--         <div class="card">
+          <img src="./images/shayan.jpeg" alt="shayan" loading="lazy">
+          <h5>Shayan Pal</h5>
+          <div class="pra">
+            <p>Member</p>
+            <a href="https://bio.link/shayanpal"><button>Let's Connect</button></a>
+          </div>
+        </div> -->
+<div class="card" data-aos="fade-up" ddata-aos-duration="800">
+<img alt="yuvan" loading="lazy" src="./images/yuvan.webp"/>
+<h5>Mamidala Yuvan</h5>
+<div class="pra">
+<p>Head of The Team</p>
+</div>
+</div>
+<div class="card" data-aos="fade-up" data-aos-duration="800">
+<img alt="pavitra" loading="lazy" src="./images/pavitra (1).jpg"/>
+<h5>Goundla Pavithra</h5>
+<div class="pra">
+<p>Member</p>
+</div>
+</div>
+<div class="card" data-aos="fade-up" data-aos-duration="800">
+<img alt="uma" loading="lazy" src="./images/uma (1).jpg"/>
+<h5>Lakkakula Uma</h5>
+<div class="pra">
+<p>Member</p>
+</div>
+</div>
+<div class="card" data-aos="fade-up" data-aos-duration="800">
+<img alt="chandana" loading="lazy" src="./images/chandana (1).jpg"/>
+<h5>Ch. Sai Chandana</h5>
+<div class="pra">
+<p>Member</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES SECTION -->
+<section id="services">
+<h1>Our Services</h1>
+<div class="container" data-aos="zoom-in" data-aos-duration="800">
+<div class="responsive audio">
+<div class="round-image">
+<img alt="audio" loading="lazy" src="./images/audio.png">
+</img></div>
+<div class="description">
+<h2>Music Therapy</h2>
+<p>
+            Listening to music &amp; other audio files often enlightens our mood.
+          </p>
+<a href="html/musicTherapy.html">
+            Let's Explore
+          </a>
+</div>
+</div>
+<div class="responsive reading" data-aos="zoom-in" data-aos-duration="800">
+<div class="round-image">
+<img alt="read" loading="lazy" src="./images/reading.png">
+</img></div>
+<div class="description">
+<h2>Reading Therapy</h2>
+<p>
+            Motivational quotes and books can help us to divert and change our mood.
+          </p>
+<a href="html/readingTherapy.html">
+            Let's Explore
+          </a>
+</div>
+</div>
+<div class="responsive yoga" data-aos="zoom-in" data-aos-duration="800">
+<div class="round-image">
+<img alt="yoga" loading="lazy" src="./images/yoga.png">
+</img></div>
+<div class="description">
+<h2>Yoga Therapy</h2>
+<p>
+            Yoga and exercise plays a very important role in our lives.
+          </p>
+<a href="html/yogatherapy.html">
+            Let's Explore
+          </a>
+</div>
+</div>
+<div class="responsive laugh" data-aos="zoom-in" data-aos-duration="800">
+<div class="round-image">
+<img alt="laughing" src="./images/laughing.png">
+</img></div>
+<div class="description">
+<h2>Laughing Therapy</h2>
+<p>
+            Laughing is the only medicine which refreshes our mind.
+          </p>
+<a href="html/laughTherapy.html">
+            Let's Explore
+          </a>
+</div>
+</div>
+<div class="responsive talk" data-aos="zoom-in" data-aos-duration="800">
+<div class="round-image">
+<img alt="talking" loading="lazy" src="./images/talking.png">
+</img></div>
+<div class="description">
+<h2>Talking Therapy</h2>
+<p>
+            A quick short conversation can often bring smile to our face.
+          </p>
+<a href="html/talkingTherapy.html">
+            Let's Explore
+          </a>
+</div>
+</div>
+
+<div class="responsive spiritual">
+<div class="round-image">
+<img alt="spiritual" loading="lazy" src="./images/spiritualtherapy.jpg"/>
+</div>
+<div class="description">
+<h2>Spiritual Therapy</h2>
+<p>
+            Helps you to become more mindful in your thinking.
+          </p>
+<a href="./html/spirituality.html" target="_blank">
+            Let's Explore
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Faq section -->
+<section class="faq">
+<div class="faq_heading">
+<h1>Frequently Asked Questions</h1>
+</div>
+<div class="accordion">
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>Who are we and what do we do?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p>We are a team of open source contributors who have created this website "Hridaya"
+            with the aim
+            to provide a one step solution to get relief from stress. We hope that everyone can live a
+            stress free life with the help of Hridaya.</p>
+</div>
+</div>
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>What are the services we offer?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p>We offer multiple services like:
+            <br/>
+            1. Music Therapy
+            <br/>
+            2. Reading Therapy
+            <br/>
+            3. Yoga Therapy
+            <br/>
+            4. Laughing Therapy
+            <br/>
+            5. Talking Therapy
+            <br/>
+            6. Spiritual Therapy
+          </p>
+</div>
+</div>
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>How can you Contact Us?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p> You can contact us via <a class="email" href="mailto:sukoon7129@gmail.com">hridaya7129@gmail.com</a>
+</p>
+</div>
+</div>
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Reading Therapy?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p>Reading therapy is a creative art therapy that uses literature to support good
+            mental health and is a versatile and cost-effective treatment. It includes storytelling or the reading of
+            specific texts.</p>
+</div>
+</div>
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Music Therapy?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p>Audio Therapy includes auditory and vibratory inputs which are used to influence a person's psychological
+            state, includes sound healing, vibroacoustic sound therapy, music, and music therapy.</p>
+</div>
+</div>
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Yoga Therapy?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p>Yoga therapy uses yoga postures, breathing exercises, meditation, and guided imagery to improve mental and
+            physical health.</p>
+</div>
+</div>
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Laughing Therapy?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p>Laughing therapy uses humor to help relieve pain and stress and improve a person's sense of well-being
+            through jokes and playful exercises that encourage hearty, continuous, and lively laughter.</p>
+</div>
+</div>
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Talking Therapy?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p>Talking therapy involves talking to someone to help deal with negative feelings or other mental health
+            problems. It helps shy individuals open up their problems to others so that they can help them overcome
+            them.</p>
+</div>
+</div>
+<div class="accordion__item">
+<button class="accordion__btn">
+<span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Spritual Therapy?</span>
+<span class="accordion__icon"><i class="fa fa-plus"></i></span>
+</button>
+<div class="accordion__content">
+<p>Spiritual therapy is a form of counseling that attempts to treat a person's soul as well as mind and body
+            by accessing individual belief systems and using
+            that faith in a higher power to explore areas of conflict in life.</p>
+</div>
+</div>
+</div>
+
+</section>
+<!-- footer start -->
+<footer>
+<div class="footer-container">
+<!--logo and info column-->
+<div class="col">
+<!--logo insert-->
+<img alt="logo" class="footlogo" src="logo.png"/>
+<div class="footercontent">
+<h2 class="footerheading">Hridaya</h2>
+<p class="footerpara">go stress free</p>
+</div>
+</div>
+<!--ADDRESS COLUMN-->
+<div class="footer-side-col">
+<div class="col">
+<h3>
+            ADDRESS
+            <div class="underline"><span></span></div>
+</h3>
+<p>Telangana, India</p>
+<p class="email-id"><a href="mailto:sukoon7129@gmail.com">sukoon7129@gmail.com</a></p>
+</div>
+<!--HOME COLUMN-->
+<div class="col">
+<h3>HOME</h3>
+<ul>
+<li><a href="#about">About Us</a></li>
+<li>
+<a href="https://github.com/Yuvann04/Hridaya">Contribute</a>
+</li>
+</ul>
+</div>
+<!--OUR SERVICES COLUMN-->
+<!--CONTACTS COLUMN-->
+<div class="col">
+<h3>
+            CONTACTS
+            <div class="underline"><span></span></div>
+</h3>
+<div class="social-menu">
+<ul>
+<a href="https://x.com/hridaya7129" target="_blank">
+<li id="social-twitter"><i class="fab fa-2x fa-twitter"></i></li>
+</a>
+<a href="https://github.com/Yuvann04/Hridaya" target="_blank">
+<li id="social-github"><i class="fab fa-2x fa-github"></i></li>
+</a>
+<a href="https://www.linkedin.com/in/hridaya-online-11059b364/" target="_blank">
+<li id="social-linkedin"><i class="fab fa-2x fa-linkedin-in"></i></li>
+</a>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    let preloader = document.querySelector(".loading-wrapper");
+    function myFunction() {
+      preloader.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    let navbar = document.querySelector("#nav");
+    let navmenu = document.querySelector("#navmenu");
+
+    window.onscroll = function () {
+      if (window.pageYOffset >= navmenu.offsetTop) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    };
+
+    window.onscroll = () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('nav-active');
+      } else {
+        navbar.classList.remove('nav-active');
+      }
+    };
+  </script>
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./serviceworker.js')
+          .then((reg) => console.log('Success', reg.scope))
+          .catch((err) => console.log('Error', err))
+      })
+    }
+  </script>
+<script src="js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+</body>
+</html>
